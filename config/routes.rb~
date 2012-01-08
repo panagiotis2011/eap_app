@@ -1,5 +1,7 @@
 EapApp::Application.routes.draw do
-  get "users/new"
+  get "sessions/new"
+
+  resources :users
   
   match '/signup',  :to => 'users#new'
 
