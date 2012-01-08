@@ -26,7 +26,7 @@ end
 # --- Instructions ---
 # Sort the contents of this file into a Spork.prefork and a Spork.each_run
 # block.
-#
+
 # The Spork.prefork block is run only once when the spork server is started.
 # You typically want to place most of your (slow) initializer code in here, in
 # particular, require'ing any 3rd-party gems that you don't normally modify
@@ -51,7 +51,6 @@ end
 #
 # These instructions should self-destruct in 10 seconds.  If they don't, feel
 # free to delete them.
-
 
 
 

@@ -43,7 +43,7 @@ describe UsersController do
           response.should have_selector("li", :content => user.name)
         end
       end
-      
+
       it "should paginate users" do
         get :index
         response.should have_selector("div.pagination")
@@ -54,8 +54,8 @@ describe UsersController do
                                            :content => "Next")
       end
     end
-  end	
- 
+  end
+
   describe "GET 'show'" do
 
     before(:each) do
@@ -85,6 +85,13 @@ describe UsersController do
       get :show, :id => @user
       response.should have_selector("h1>img", :class => "gravatar")
     end
+    it "should show the user's microposts" do
+      mp1 = Factory(:micropost, :user => @user, :content => "Foo bar")
+      mp2 = Factory(:micropost, :user => @user, :content => "Baz quux")
+      get :show, :id => @user
+      response.should have_selector("span.content", :content => mp1.content)
+      response.should have_selector("span.content", :content => mp2.content)
+    end
   end
 
   describe "GET 'new'" do
@@ -97,7 +104,7 @@ describe UsersController do
       response.should have_selector("title", :content => "Sign up")
     end
   end
-   
+
   describe "POST 'create'" do
 
     	describe "failure" do
@@ -123,7 +130,7 @@ describe UsersController do
  	           response.should render_template('new')
  	      end
         end
-    
+
 	describe "success" do
 
 	      before(:each) do
@@ -140,20 +147,20 @@ describe UsersController do
 	      it "should redirect to the user show page" do
 		        post :create, :user => @attr
 		        response.should redirect_to(user_path(assigns(:user)))
-	      end 
-      
+	      end
+
 	      it "should sign the user in" do
 		        post :create, :user => @attr
 		        controller.should be_signed_in
 	      end
-        
+
               it "should have a welcome message" do
 		        post :create, :user => @attr
 		        flash[:success].should =~ /Welcome to the Eap App/i
-	      end 
+	      end
         end
   end
-     
+
   describe "GET 'edit'" do
 
   	before(:each) do
@@ -178,7 +185,7 @@ describe UsersController do
                                          :content => "change")
         end
   end
-  
+
   describe "authentication of edit/update pages" do
 
     before(:each) do
@@ -198,7 +205,7 @@ describe UsersController do
       end
     end
   end
-  
+
   describe "PUT 'update'" do
 
     before(:each) do
@@ -248,7 +255,7 @@ describe UsersController do
         flash[:success].should =~ /updated/
       end
     end
-    
+
     describe "for signed-in users" do
 
       before(:each) do
@@ -267,7 +274,7 @@ describe UsersController do
       end
     end
   end
-  
+
   describe "DELETE 'destroy'" do
 
     before(:each) do
