@@ -104,3 +104,6 @@ footer {
   margin-left: auto;
   margin-right: auto;
 }
+footer nav {
+  float: none;
+}
