@@ -1,5 +1,7 @@
 require 'rubygems'
 require 'spork'
+require "test_notifier/autotest"
+
 
 Spork.prefork do
   # Loading more in this block will cause your tests to run faster. However,
@@ -51,7 +53,6 @@ end
 #
 # These instructions should self-destruct in 10 seconds.  If they don't, feel
 # free to delete them.
-
 
 
 

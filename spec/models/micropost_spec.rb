@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe Micropost do
+
 	before(:each) do
 		@user = Factory(:user)
 		@attr ={:content => "Value for content" }
@@ -11,6 +12,7 @@ describe Micropost do
 	end
 
 	describe "user associations" do
+
 		before(:each) do
 			@micropost = @user.microposts.create(@atrr)
 		end
@@ -24,6 +26,7 @@ describe Micropost do
 			@micropost.user.should == @user
 		end
 	end
+
 	describe "validations" do
 
 		it "should require a user id" do

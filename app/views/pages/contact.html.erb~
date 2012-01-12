@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Ruby on Rails Eap App | <%= @title %> </title>
-  </head>
-  <body>
-    <h1>Contact</h1>
-    <p>
-      Contact Ruby on Rails about the eap app at the
-      <a href="http://railstutorial.org/feedback">feedback page</a>.
-    </p>
-  </body>
-</html>
+<h1>Θεματικές ενότητες</h1>
+<p>
+	Χώροι συνεργασίας των
+	<a href="http://class.eap.gr"> Θεματικών Ενοτήτων</a>.
+	του ΕΑΠ. (Ανάρτηση βασικών κειμένων
+	και  συμμετοχή σε χώρους συζητήσεων - forum)
+</p>
