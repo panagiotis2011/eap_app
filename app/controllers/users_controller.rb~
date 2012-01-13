@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 			flash[:success] = "Welcome to the Eap App!"
 			redirect_to @user
 		else
-			@title = "Sign up"
+			@title = "Σύνδεση"
 			render 'new'
 		end
 	end
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
 			flash[:success] = "Profile updated."
 			redirect_to @user
 		else
-			@title = "Edit user"
+			@title = "Επεξεργασία Προφίλ"
 			render 'edit'
 		end
 	end

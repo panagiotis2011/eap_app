@@ -1,4 +1,4 @@
-<h1>Είσοδος στον χώρο της εφαρμογής</h1>
+<h1>Είσοδος στην εφαρμογή</h1>
 
 	<%= form_for(@user) do |f| %>
 	<%= render 'shared/error_messages', :object => f.object %>

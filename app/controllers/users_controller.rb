@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 
 	def new
 		@user = User.new
-		@title = "Sign up"
+		@title = "Σύνδεση"
 	end
 
 	def create
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 			flash[:success] = "Welcome to the Eap App!"
 			redirect_to @user
 		else
-			@title = "Sign up"
+			@title = "Σύνδεση"
 			render 'new'
 		end
 	end

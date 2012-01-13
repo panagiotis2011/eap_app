@@ -18,7 +18,7 @@
 	</p>
 	<p>Συνδεθείτε στην
 		<a href="http://online.eap.gr/">Εκπαιδευτική πύλη </a>
-		του ΕΑΠ.
+		του ΕΑΠ ή συνδεθείτε στην εφαρμογή.
 	</p>
 
 <%= link_to "Σύνδεση!", signup_path, :class => "signup_button round" %>

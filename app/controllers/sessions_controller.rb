@@ -1,6 +1,7 @@
+# encoding: utf-8
 class SessionsController < ApplicationController
 	def new
-		@title = 'Sign in'
+		@title = 'Σύνδεση'
 	end
 
 	def create
@@ -8,7 +9,7 @@ class SessionsController < ApplicationController
                                params[:session][:password])
 		if user.nil?
 			flash.now[:error] = "Invalid email/password combination."
-			@title = "Sign in"
+			@title = "Σύνδεση"
 			render 'new'
 		else
 			sign_in user
