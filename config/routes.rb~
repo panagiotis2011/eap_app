@@ -1,17 +1,20 @@
 EapApp::Application.routes.draw do
-  get "sessions/new"
+  get "errors/404"
 
-  resources :users
-  resources :sessions,   :only => [:new, :create, :destroy]
-  resources :microposts, :only => [:create, :destroy]
+  get "errors/500"
 
-  match '/signup',  :to => 'users#new'
-  match '/signin',  :to => 'sessions#new'
-  match '/signout', :to => 'sessions#destroy'
+	get "sessions/new"
 
-  match '/contact', :to => 'pages#contact'
-  match '/about',   :to => 'pages#about'
-  match '/help',    :to => 'pages#help'
+	resources :users
+	resources :sessions,   :only => [:new, :create, :destroy]
+	resources :microposts, :only => [:create, :destroy]
 
-  root :to => 'pages#home'
+	match '/signup',  :to => 'users#new'
+	match '/signin',  :to => 'sessions#new'
+	match '/signout', :to => 'sessions#destroy'
+	match '/contact', :to => 'pages#contact'
+	match '/about',   :to => 'pages#about'
+	match '/help',    :to => 'pages#help'
+
+	root :to => 'pages#home'
 end
